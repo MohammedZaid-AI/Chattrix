@@ -4,7 +4,8 @@ from cryptography.fernet import Fernet
 from chatbot import ask_ai
 
 # --- Encryption setup ---
-key = Fernet.generate_key()
+key = b'RJZl2omG2j3DmHs2s_noGFvepub5LUWS_WoiSHYe2Ys='
+#key = Fernet.generate_key()
 cipher = Fernet(key)
 print("\n🔐 Encryption Key:", key.decode())
 print("Share this key securely with your friend.\n")

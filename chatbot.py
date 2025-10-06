@@ -1,16 +1,15 @@
 import os
-from google.generativeai import GenerativeModel
-from dotenv import load_dotenv
-from langchain.llms import ChatGoogleGenerativeAI
-from langchain.prompts import PromptTemplate
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.chains import LLMChain
+from dotenv import load_dotenv
+from langchain_core.prompts import PromptTemplate
 
 load_dotenv()
 os.environ["GOOGLE_API_KEY"]=os.getenv("GOOGLE_API_KEY")
 
 llm=ChatGoogleGenerativeAI(
-    model_name="gemini-2.5-pro",
-    temperature=0.5,
+    model="gemini-2.5-pro",
+    temperature=0.5
 )
 
 system_prompt="""
