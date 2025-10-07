@@ -13,8 +13,7 @@ llm=ChatGoogleGenerativeAI(
 )
 
 system_prompt="""
-Takes a question as input, sends it to the AI model,
-    and returns the model's reply.
+Answer this question briefly and clearly:\n{question}
 """
 
 prompt=PromptTemplate(
@@ -32,5 +31,5 @@ def ask_ai(question):
     Takes a question as input, sends it to the AI model,
     and returns the model's reply.
     """
-    return chain.run(question)
+    return chain.invoke(question)
 
