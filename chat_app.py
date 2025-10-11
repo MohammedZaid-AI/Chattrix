@@ -33,6 +33,10 @@ def send_messages(conn):
             print("🤖 Thinking...")
             ai_reply = ask_ai(question)
             print("\nAI:", ai_reply)
+
+            # Send AI reply to friend (encrypted)
+            encrypted_ai = cipher.encrypt(f"🤖 AI: {ai_reply}".encode())
+            conn.send(encrypted_ai)
             continue
 
         # Normal encrypted message
